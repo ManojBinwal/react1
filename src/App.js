@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
+let name = "Manoj";
 function App() {
   return (
-   <div>
-    "Hello React"
-   </div>
+   <>
+    <nav>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+      <p>Hello {name}</p>
+    </nav>
+   </>
   );
 }
 
