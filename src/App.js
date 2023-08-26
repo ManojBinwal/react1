@@ -30,6 +30,7 @@ function App() {
       setButtonText("Disable Dark Mode")
       setTextCol("white")
       showAlert("Dark Mode has been enabled", "success")
+      document.title = "TextUtils | Dark Mode"
 
     }
     else {
@@ -38,6 +39,7 @@ function App() {
       setButtonText("Enable Dark Mode")
       setTextCol("dark")
       showAlert("Dark Mode has been disabled", "success")
+      document.title = "TextUtils | Light Mode"
     }
   }
 
