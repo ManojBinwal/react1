@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import ToggleButton from './ToggleButton'
+import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
     
@@ -24,10 +25,10 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">{props.home}</a>
+                            <Link className="nav-Link active" aria-current="page" to="/">{props.home}</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">{props.about}</a>
+                            <Link className="nav-Link" to="/about">{props.about}</Link>
                         </li>
                     </ul>
                     <form className="d-flex px-3 py-1 my-2" role="search">

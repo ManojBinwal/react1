@@ -5,6 +5,7 @@ import About from './components/About';
 import Navbar from './components/Navbar'
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
 
@@ -30,7 +31,6 @@ function App() {
       setButtonText("Disable Dark Mode")
       setTextCol("white")
       showAlert("Dark Mode has been enabled", "success")
-      document.title = "TextUtils | Dark Mode"
 
     }
     else {
@@ -39,26 +39,30 @@ function App() {
       setButtonText("Enable Dark Mode")
       setTextCol("dark")
       showAlert("Dark Mode has been disabled", "success")
-      document.title = "TextUtils | Light Mode"
     }
   }
 
 
   return (
     <>
+      <BrowserRouter>
 
-      <Navbar textCol={textCol} title="TextUtils2" home="Home" about="About" toggle={toggleMode} mode={mode} buttonText={buttonText} />
+        <Navbar textCol={textCol} title="TextUtils2" home="Home" about="About" toggle={toggleMode} mode={mode} buttonText={buttonText} />
 
-      <strong><Alert alert={alert} /></strong>
+        <strong><Alert alert={alert} /></strong>
 
-      <div className="container my-3">
 
-        <TextForm showAlert = {showAlert} title="Enter the text to Analyze" mode={mode} />
 
-      </div>
-      {/* <div className='container my-3 '>
-        <About heading="About Us"/>
-      </div> */}
+        <div className="container my-3 flex flex-row gap-2" >
+          <Routes>
+            <Route exact path="/about" element={<About heading="About Us" />}></Route>
+            <Route
+              exact path="/"
+              element={<TextForm showAlert={showAlert} title="Enter the text to Analyze" mode={mode} />} ></Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+
 
     </>
   );
