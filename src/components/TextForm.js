@@ -10,12 +10,14 @@ const TextForm = (props) => {
         console.log("button was clicked")
         const newText = text.toUpperCase(text);
         setText(newText);
+        props.showAlert("Converted to UPPER CASE ","success")
 
     }
     const handleDwClick = () => {
         console.log("button was clicked")
         const newText = text.toLowerCase(text);
         setText(newText);
+        props.showAlert("Converted to lower case ","success")
 
     }
 
@@ -37,6 +39,7 @@ const TextForm = (props) => {
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Copied ","success")
         // alert("text Copied");
     }
 
@@ -45,6 +48,7 @@ const TextForm = (props) => {
         let newText = text.split(/[ ]+/);
         //join the text and update the text
         setText(newText.join(" "))
+        props.showAlert("Removed extra spaces ","success")
 
     }
 
