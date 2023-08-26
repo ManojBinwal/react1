@@ -39,6 +39,7 @@ export default function About(props) {
         }
     }
 
+
     return (
         <div className='container' style={myStyle}>
             <h1 className='mx-2 '>{props.heading}</h1>
@@ -83,6 +84,7 @@ export default function About(props) {
             <button onClick={toggleDarkStyle} className='bg-primary text-white my-2 mx-2 ' style={myStyle}>Enable Dark Mode</button>
             <button onClick={toggleLightStyle} className='bg-primary text-white my-2 mx-2 ' style={myStyle}>Enable Light Mode</button>
             <button onClick={toggleDarkLight} className='bg-primary text-white my-2 mx-2 ' style={myStyle}>{toggleText}</button>
+            
         </div>
     )
 }
